@@ -1,21 +1,24 @@
-const invoice = 50;
+// const invoice = 50;
 const stock = 100;
 
-const message =
-  invoice <= stock
-    ? "Заказ оформлен, с вами свяжется менеджер"
-    : "На складе недостаточно товаров!";
+// const message =
+//   invoice <= stock
+//     ? "Заказ оформлен, с вами свяжется менеджер"
+//     : "На складе недостаточно товаров!";
 
-console.log(message);
+// console.log(message);
 
-//если invoice равен 100
-// то значение message будет равно
-// 'Заказ оформлен, с вами свяжется менеджер'
+// experiment
+const invoiceInputRef = document.querySelector('input[name="invoice"]');
+const checkoutRef = document.querySelector(".checkout");
 
-//если invoice равен 50
-// то значение message будет равно
-// 'Заказ оформлен, с вами свяжется менеджер'
+let message;
+checkoutRef.addEventListener("click", function () {
+  if (Number(invoiceInputRef.value) <= stock) {
+    message = "Заказ оформлен, с вами свяжется менеджер";
+  } else {
+    message = "На складе недостаточно товаров!";
+  }
 
-//если invoice равен 150
-// то значение message будет равно
-// 'На складе недостаточно товаров!'
+  console.log(message);
+});
